@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniOne OpenDID Orchestrator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Container -->
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col border-r border-gray-300" style="height: 1250px;">
+            <div class="p-6 text-lg font-bold">OmniOne OpenDID Orchestrator</div>
+            <nav class="flex-1">
+                <a href="#" class="block py-3 px-6 bg-orange-500">Dashboard</a>
+            </nav>
+            <div class="p-6 text-sm text-gray-400 flex-grow"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            
+            <!-- Top Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold">Dashboard</h1>
+                <button onclick="showHelp()" class="text-gray-500 hover:text-gray-700">
+                    <svg width="36px" height="24px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <title>ionicons-v5-e</title>
+                        <path d="M256,80A176,176,0,1,0,432,256,176,176,0,0,0,256,80Z" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                        <path d="M200,202.29s.84-17.5,19.57-32.57C230.68,160.77,244,158.18,256,158c10.93-.14,20.69,1.67,26.53,4.45,10,4.76,29.47,16.38,29.47,41.09,0,26-17,37.81-36.37,50.8S251,281.43,251,296" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:28px"/>
+                        <circle cx="250" cy="348" r="20"/>
+                    </svg>
+                </button>
+            </div>
+
+          <!-- Orchestrator Status Table -->
+          <div class="bg-white p-6 rounded shadow">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Quick Start</h2>
+            </div>
+
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2" style="width: 80px;">Status</th>
+                        <th class="p-2" style="width: 224px;">Name</th>
+                        <th class="p-2" style="width: 384px;">Actions</th>
+                        <th class="p-2" style="width: 288px;">Message</th>
+                    </tr>
+                </thead>
+                <tbody id="server-table">
+                    <tr class="border-b">
+                        <td class="p-2">ㅤ🟡</td>
+                        <td class="p-2 font-bold">All Entities</td>
+                        <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  </td>
+                        <td class="p-2 text-gray-700">CAS is not running</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        ㅤ
+            <!-- Orchestrator Status Table -->
+            <div class="bg-white p-6 rounded shadow">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Repositories</h2>
+                </div>
+
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-2" style="width: 80px;">Status</th>
+                            <th class="p-2" style="width: 224px;">Name</th>
+                            <th class="p-2" style="width: 384px;">Actions</th>
+                            <th class="p-2" style="width: 288px;">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="server-table">
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">Hyperledger Fabric</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  </td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">PostgreSQL</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  </td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            ㅤ
+            <!-- Orchestrator Status Table -->
+            <div class="bg-white p-6 rounded shadow">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Servers</h2>
+                </div>
+
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-2" style="width: 80px;">Status</th>
+                            <th class="p-2" style="width: 224px;">Name</th>
+                            <th class="p-2" style="width: 384px;">Actions</th>
+                            <th class="p-2" style="width: 288px;">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="server-table">
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">TAS (8090)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">Issuer (8091)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">Verifier (8092)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">API (8093)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🔴</td>
+                            <td class="p-2 font-bold">CAS (8094)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700">JDBC Connection Failed</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">WalletService (8095)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ🟢</td>
+                            <td class="p-2 font-bold">Orchestrator (9001)</td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Refresh</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            ㅤ
+            <!-- Orchestrator Status Table -->
+            <div class="bg-white p-6 rounded shadow">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Demo</h2>
+                </div>
+
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-2" style="width: 80px;">Status</th>
+                            <th class="p-2" style="width: 224px;">Name</th>
+                            <th class="p-2" style="width: 384px;">Actions</th>
+                            <th class="p-2" style="width: 288px;">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="server-table">
+                        <tr class="border-b">
+                            <td class="p-2">ㅤ-</td>
+                            <td class="p-2 font-bold">DEMO (8099)</td>
+                            <td class="p-2">-</td>
+                            <td class="p-2 text-gray-700"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            ㅤ
+        </main>
+    </div>
+
+</body>
+</html>
