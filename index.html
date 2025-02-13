@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniOne OpenDID Orchestrator</title>
+    <title>Cybersecurity Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -49,6 +49,7 @@
                         <th class="p-2" style="width: 80px;">Status</th>
                         <th class="p-2" style="width: 224px;">Name</th>
                         <th class="p-2" style="width: 384px;">Actions</th>
+                        <th class="p-2" style="width: 224px;">Info</th>
                     </tr>
                 </thead>
                 <tbody id="server-table">
@@ -56,6 +57,7 @@
                         <td class="p-2">ㅤ🟡</td>
                         <td class="p-2 font-bold">All Entities</td>
                         <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button></td>
+                        <td class="p-2"></td>
                     </tr>
                 </tbody>
             </table>
@@ -73,6 +75,7 @@
                             <th class="p-2" style="width: 80px;">Status</th>
                             <th class="p-2" style="width: 224px;">Name</th>
                             <th class="p-2" style="width: 384px;">Actions</th>
+                            <th class="p-2" style="width: 224px;">Info</th>
                         </tr>
                     </thead>
                     <tbody id="server-table">
@@ -80,11 +83,13 @@
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Hyperledger Fabric</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  </td>
+                            <td class="p-2"></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">PostgreSQL</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  </td>
+                            <td class="p-2"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -102,38 +107,45 @@
                             <th class="p-2" style="width: 80px;">Status</th>
                             <th class="p-2" style="width: 224px;">Name</th>
                             <th class="p-2" style="width: 384px;">Actions</th>
+                            <th class="p-2" style="width: 224px;">Info</th>
                         </tr>
                     </thead>
                     <tbody id="server-table">
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">TAS (8090)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Issuer (8091)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Verifier (8092)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">API Server (8093)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🔴</td>
                             <td class="p-2 font-bold">CAS (8094)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Wallet Service (8095)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  <button class="bg-orange-500 text-white px-3 py-1 rounded">Settings</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -152,12 +164,14 @@
                             <th class="p-2" style="width: 80px;">Status</th>
                             <th class="p-2" style="width: 224px;">Name</th>
                             <th class="p-2" style="width: 384px;">Actions</th>
+                            <th class="p-2" style="width: 224px;">Info</th>
                         </tr>
                     </thead>
                     <tbody id="server-table">
                         <tr class="border-b">
                             <td class="p-2">ㅤ-</td>
                             <td class="p-2 font-bold">DEMO (8099)</td>
+                            <td class="p-2">-</td>
                             <td class="p-2">-</td>
                         </tr>
                     </tbody>
