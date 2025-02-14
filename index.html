@@ -57,7 +57,7 @@
                     <tr class="border-b">
                         <td class="p-2">ㅤ🟡</td>
                         <td class="p-2 font-bold">All Entities</td>
-                        <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button></td>
+                        <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button></td>
                         <td class="p-2"></td>
                         <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                     </tr>
@@ -84,13 +84,13 @@
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Hyperledger Fabric</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  </td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  </td>
                             <td class="p-2"></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">PostgreSQL</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  </td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button>  </td>
                             <td class="p-2"></td>
                         </tr>
                     </tbody>
@@ -117,42 +117,42 @@
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">TAS (8090)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                             <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Issuer (8091)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                             <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Verifier (8092)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                             <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🔴</td>
                             <td class="p-2 font-bold">CAS (8094)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                             <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Wallet Service (8095)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                             <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">API Server (8093)</td>
-                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
+                            <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar();">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
                             <td class="p-2"></td>
                         </tr>
@@ -317,7 +317,21 @@
         </div>
     </div>
 
+    <!-- Progress Bar Overlay -->
+    <div id="progress-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading..." class="w-16 h-16">
+    </div>
+
     <script>
+        function showProgressBar() {
+            const progressOverlay = document.getElementById('progress-overlay');
+            progressOverlay.classList.remove('hidden'); // 오버레이 표시
+
+            setTimeout(() => {
+                progressOverlay.classList.add('hidden'); // 3초 후 숨기기
+            }, 3000);
+        }
+
         function openPopupDid() {
             document.getElementById('popup-overlay-did').classList.remove('hidden');
         }
