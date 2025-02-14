@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Dashboard</title>
+    <title>OmniOne OpenDID Orchestrator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -59,7 +59,7 @@
                         <td class="p-2 font-bold">All Entities</td>
                         <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button></td>
                         <td class="p-2"></td>
-                        <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded">DID Document</button></td>
+                        <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -119,35 +119,35 @@
                             <td class="p-2 font-bold">TAS (8090)</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
-                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded">DID Document</button></td>
+                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Issuer (8091)</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
-                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded">DID Document</button></td>
+                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Verifier (8092)</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
-                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded">DID Document</button></td>
+                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🔴</td>
                             <td class="p-2 font-bold">CAS (8094)</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
-                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded">DID Document</button></td>
+                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
                             <td class="p-2 font-bold">Wallet Service (8095)</td>
                             <td class="p-2"><button class="bg-orange-500 text-white px-3 py-1 rounded">Start</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Stop</button> <button class="bg-orange-500 text-white px-3 py-1 rounded">Status</button></td>
                             <td class="p-2"><button class="bg-gray-500 text-white px-3 py-1 rounded">Settings</button> <button class="bg-gray-500 text-white px-3 py-1 rounded">Swagger</button></td>
-                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded">DID Document</button></td>
+                            <td class="p-2"><button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button> <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-2">ㅤ🟢</td>
@@ -189,6 +189,83 @@
             ㅤ
         </main>
     </div>
+
+    <!-- DID Document Generator 팝업 오버레이 -->
+    <div id="popup-overlay-did" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white w-[400px] p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-bold border-b pb-2 mb-4">DID Document Generator</h2>
+            
+            <form>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">did</label>
+                    <input type="text" class="w-full border p-2 rounded" value="did:omn:tas">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">wallet name</label>
+                    <input type="text" class="w-full border p-2 rounded" value="tas">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">password</label>
+                    <input type="password" class="w-full border p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">confirm password</label>
+                    <input type="password" class="w-full border p-2 rounded">
+                </div>
+                
+                <div class="flex justify-end space-x-2">
+                    <button type="button" onclick="closePopupDid()" class="px-4 py-2 border rounded text-gray-700">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-orange-500 text-white rounded">Generate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Wallet Generator 팝업 오버레이 -->
+    <div id="popup-overlay-wallet" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white w-[400px] p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-bold border-b pb-2 mb-4">Wallet Generator</h2>
+            
+            <form>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">wallet name</label>
+                    <input type="text" class="w-full border p-2 rounded" value="tas">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">password</label>
+                    <input type="password" class="w-full border p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700">confirm password</label>
+                    <input type="password" class="w-full border p-2 rounded">
+                </div>
+                
+                <div class="flex justify-end space-x-2">
+                    <button type="button" onclick="closePopupWallet()" class="px-4 py-2 border rounded text-gray-700">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-orange-500 text-white rounded">Generate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        function openPopupDid() {
+            document.getElementById('popup-overlay-did').classList.remove('hidden');
+        }
+
+        function closePopupDid() {
+            document.getElementById('popup-overlay-did').classList.add('hidden');
+        }
+
+        function openPopupWallet() {
+            document.getElementById('popup-overlay-wallet').classList.remove('hidden');
+        }
+
+        function closePopupWallet() {
+            document.getElementById('popup-overlay-wallet').classList.add('hidden');
+        }
+    </script>
 
 </body>
 </html>
