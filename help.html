@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniOne OpenDID Orchestrator - Help</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="help-popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white w-[1000px] max-h-[80vh] p-6 rounded-lg shadow-lg overflow-y-auto">
+      <h2 class="text-lg font-bold border-b pb-2 mb-4">OmniOne OpenDID Orchestrator Prerequisites</h2>
+      
+      <div class="text-gray-700 text-sm space-y-4">
+        <p>
+          Before you begin setting up Hyperledger Fabric, you need to install the required dependencies.
+          The following software components must be installed on your machine:
+        </p>
+
+        <h3 class="font-semibold text-gray-900">1. Operating System</h3>
+        <p>
+          Hyperledger Fabric has been tested on:
+        </p>
+        <ul class="list-disc list-inside pl-4 space-y-2">
+          <li>Ubuntu 20.04 LTS or later</li>
+          <li>macOS Big Sur or later</li>
+          <li>Windows 10 with WSL 2</li>
+        </ul>
+
+        <h3 class="font-semibold text-gray-900">2. Required Software</h3>
+        <p>
+          Ensure you have the following software installed:
+        </p>
+        <ul class="list-disc list-inside pl-4 space-y-2">
+          <li><strong>Docker:</strong> Version 20.10 or later</li>
+          <li><strong>Docker Compose:</strong> Version 1.29 or later</li>
+          <li><strong>npm:</strong> Version 6 or later</li>
+          <li><strong>cURL &amp; Git:</strong> Latest versions recommended</li>
+        </ul>
+
+        <h3 class="font-semibold text-gray-900">3. Installing Docker</h3>
+        <p>
+          You can install Docker using the following command:
+        </p>
+        <pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+curl -fsSL https://get.docker.com | bash
+        </pre>
+        <p>
+          After installation, verify Docker is running:
+        </p>
+        <pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+docker --version
+        </pre>
+
+        <h3 class="font-semibold text-gray-900">4. Installing Go</h3>
+        <p>
+          Install Go using the command:
+        </p>
+        <pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
+        </pre>
+        <p>
+          Verify Go installation:
+        </p>
+        <pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+go version
+        </pre>
+
+        <h3 class="font-semibold text-gray-900">5. Setting Up Hyperledger Fabric</h3>
+        <p>
+          Once all prerequisites are installed, you can proceed to set up Hyperledger Fabric by downloading the necessary binaries:
+        </p>
+        <pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+curl -sSL https://bit.ly/2ysbOFE | bash -s
+        </pre>
+        <p>
+          This will download the required Fabric binaries and Docker images.
+        </p>
+      </div>
+
+      <!-- 버튼 영역 -->
+      <div class="flex justify-end mt-6">
+        <button type="button" onclick="closeHelpPopup()" class="px-4 py-2 bg-orange-500 text-white rounded">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function closeHelpPopup() {
+      window.close();
+    }
+  </script>
+</body>
+</html>
