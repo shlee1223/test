@@ -49,7 +49,16 @@
               <th class="p-2" style="width: 224px;">Name</th>
               <th class="p-2" style="width: 224px;">Actions</th>
               <th class="p-2" style="width: 192px;">Info</th>
-              <th class="p-2" style="width: 192px;">Generators</th>
+              <th class="p-2" style="width: 192px;">Generators
+                <button onclick="showToolTip(event)" class="text-gray-500 hover:text-gray-700">
+                <svg width="22px" height="16px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <title>ionicons-v5-e</title>
+                  <path d="M256,80A176,176,0,1,0,432,256,176,176,0,0,0,256,80Z" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                  <path d="M200,202.29s.84-17.5,19.57-32.57C230.68,160.77,244,158.18,256,158c10.93-.14,20.69,1.67,26.53,4.45,10,4.76,29.47,16.38,29.47,41.09,0,26-17,37.81-36.37,50.8S251,281.43,251,296" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:28px"/>
+                  <circle cx="250" cy="348" r="20"/>
+                </svg>
+                </button>
+            </th>
             </tr>
           </thead>
           <tbody id="server-table">
@@ -57,13 +66,12 @@
               <td class="p-2 pl-6 all">🟡</td>
               <td class="p-2 font-bold">All Entities</td>
               <td class="p-2">
-                <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar('all');">Start</button>
-                <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar('all');">Stop</button>
+                <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar('all');">Start All</button>
+                <button class="bg-orange-500 text-white px-3 py-1 rounded" onclick="showProgressBar('all');">Stop All</button>
               </td>
               <td class="p-2"></td>
               <td class="p-2">
-                <button class="bg-blue-500 text-white px-3 py-1 rounded" onclick="openPopupWallet()">Wallet</button>
-                <button class="bg-red-500 text-white px-3 py-1 rounded" onclick="openPopupDid()">DID Document</button>
+                <button class="bg-green-700 text-white px-3 py-1 rounded" onclick="openGenerateAll()">Gen All</button>
               </td>
             </tr>
           </tbody>
@@ -259,6 +267,27 @@
     </main>
   </div>
 
+  <!-- Gen All 팝업 오버레이 -->
+  <div id="popup-overlay-genall" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white w-[400px] p-6 rounded-lg shadow-lg">
+      <h2 class="text-lg font-bold border-b pb-2 mb-4">Wallet & Document All Generator</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-sm font-bold text-gray-700">password</label>
+          <input type="password" class="w-full border p-2 rounded">
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-bold text-gray-700">confirm password</label>
+          <input type="password" class="w-full border p-2 rounded">
+        </div>
+        <div class="flex justify-end space-x-2">
+          <button type="button" onclick="closeGenerateAll()" class="px-4 py-2 border rounded text-gray-700">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-orange-500 text-white rounded">Generate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- DID Document Generator 팝업 오버레이 -->
   <div id="popup-overlay-did" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
     <div class="bg-white w-[400px] p-6 rounded-lg shadow-lg">
@@ -346,6 +375,41 @@
     }
     function closePopupWallet() {
       document.getElementById('popup-overlay-wallet').classList.add('hidden');
+    }
+    function openGenerateAll() {
+      document.getElementById('popup-overlay-genall').classList.remove('hidden');
+    }
+    function closeGenerateAll() {
+      document.getElementById('popup-overlay-genall').classList.add('hidden');
+    }
+  </script>
+  <script>
+    function showToolTip(e) {
+      // 이벤트가 전달되지 않으면 window.event를 사용 (IE 등 구형 브라우저 대응)
+      e = e || window.event;
+      // 클릭된 요소(또는 이벤트 발생 요소)를 가져옴
+      var target = e.currentTarget || e.target;
+      var rect = target.getBoundingClientRect();
+  
+      // 말풍선(툴팁) 생성
+      var tooltip = document.createElement('div');
+      tooltip.className = "absolute bg-gray-700 text-white text-xs rounded py-1 px-2";
+      tooltip.style.zIndex = "1000";
+      tooltip.innerHTML = "필요한 Wallet, DID Document를 자동으로 일괄 생성합니다.<br>하나하나 직접 생성이 필요하면 아래 Servers의 Generators에서 생성해주세요."; // 원하는 도움말 내용으로 수정
+  
+      // 말풍선을 target 요소 바로 아래에 5px 간격으로 배치
+      var top = rect.bottom + window.scrollY + 5; // 문서 스크롤 고려
+      var left = rect.left + window.scrollX;
+      tooltip.style.top = top + "px";
+      tooltip.style.left = left + "px";
+  
+      // 말풍선을 문서에 추가
+      document.body.appendChild(tooltip);
+  
+      // 3초 후 말풍선을 제거 (필요에 따라 시간 조정)
+      setTimeout(function(){
+        tooltip.remove();
+      }, 3000);
     }
   </script>
 </body>
